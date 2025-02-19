@@ -150,14 +150,14 @@ canopen:
       index: 1
       tpdo: 0
       size: 1
-      min: 0
-      max: 50
+      min_value: 0
+      max_value: 50
     - id: humidity
       index: 2
       tpdo: 0
       size: 1
-      min: 0
-      max: 100
+      min_value: 0
+      max_value: 100
     - id: heater
       index: 3
       tpdo: 0

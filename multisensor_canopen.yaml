@@ -15,11 +15,11 @@ substitutions:
 external_components:
   - source: github://mrk-its/esphome-canopen
 esphome:
-  name: "${name}_${node_id}"
+  name: "${name}"
   friendly_name: $(friendly_name)
   min_version: 2024.6.0
   project:
-    name: esphome.Multisensor_canopen
+    name: "esphome.Multisensor_canopen"
     version: 0.1
 esp32:
   board: esp32dev

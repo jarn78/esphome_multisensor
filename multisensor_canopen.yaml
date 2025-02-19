@@ -97,29 +97,32 @@ sensor:
   - platform: veml7700
     i2c_id: sensors
     address: 0x10
-    internal: True
     update_interval: 60s
     # short variant of sensor definition:
     ambient_light: 
       name: "Ambient light"
       id: ambient_light
+      internal: True
     # longer variant of sensor definition:
     actual_gain:
       name: "Actual gain"
       id: gain
+      internal: True
   - platform: htu21d
     i2c_id: sensors
     model: htu21d
-    internal: True
     temperature:
       name: "Temperature"
       id: temperature
+      internal: True
     humidity:
       name: "Humidity"
       id: humidity
+      internal: True
     heater:
       name: "Heater"
       id: heater
+      internal: True
 output:
   - platform: gpio
     pin: GPIO26

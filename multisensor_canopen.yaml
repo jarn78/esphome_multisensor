@@ -8,15 +8,16 @@ substitutions:
   ## Change only in your      ##
   ## local yaml substitutions ##
 #  device_name: "multisensor"
-  name: "${device_name}"
+  name: ${device_name}
   friendly_name: ${device_name}
-  ota_password: "${wifi_password}"
+  ota_password: ${wifi_password}
+  update_interval: 60s
 #  node_id: 1
 external_components:
   - source: github://mrk-its/esphome-canopen
 esphome:
-  name: "${name}"
-  friendly_name: $(friendly_name)
+  name: ${name}
+  friendly_name: ${friendly_name}
   min_version: 2024.6.0
   project:
     name: "esphome.Multisensor_canopen"
@@ -34,7 +35,7 @@ wifi:
       password: ${wifi_password}
 api:
   encryption:
-    key: "4K2JCR9dvhWax3nBCITN67nVWG23N7F2NoQC6LhkrXc="
+    key: ${api_encryption_key}
 ota:
   - id: ota_std
     platform: esphome
@@ -97,27 +98,33 @@ sensor:
   - platform: veml7700
     i2c_id: sensors
     address: 0x10
-    update_interval: 60s
+    update_interval: ${update_interval}
     # short variant of sensor definition:
     ambient_light: 
       name: "Ambient light"
       id: ambient_light
+      internal: True
     # longer variant of sensor definition:
     actual_gain:
       name: "Actual gain"
       id: gain
+      internal: True
   - platform: htu21d
     i2c_id: sensors
     model: htu21d
+    update_interval: ${update_interval}
     temperature:
       name: "Temperature"
       id: temperature
+      internal: True
     humidity:
       name: "Humidity"
       id: humidity
+      internal: True
     heater:
       name: "Heater"
       id: heater
+      internal: True
 output:
   - platform: gpio
     pin: GPIO26
@@ -130,10 +137,12 @@ light:
     name: "LED"
     id: led
     output: pin_LED
+    internal: True
   - platform: binary
     name: "OUT"
     id: out
     output: pin_OUT
+    internal: True
 canbus:
   - platform: esp32_can
     id: can_bus

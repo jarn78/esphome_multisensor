@@ -15,9 +15,9 @@ substitutions:
 external_components:
   - source: github://mrk-its/esphome-canopen
 esphome:
-  name: "$(name)"
+  name: $(name)
   friendly_name: $(friendly_name)
-  min_version: 2024.6.0
+  min_version: "2024.6.0"
   project:
     name: "esphome.Multisensor_canopen"
     version: "0.1"

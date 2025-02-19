@@ -8,9 +8,9 @@ substitutions:
   ## Change only in your      ##
   ## local yaml substitutions ##
 #  device_name: "multisensor"
-  name: ${device_name}
+  name: "${device_name}"
   friendly_name: ${device_name}
-  ota_password: ${wifi_password}
+  ota_password: "${wifi_password}"
 #  node_id: 1
 external_components:
   - source: github://mrk-its/esphome-canopen

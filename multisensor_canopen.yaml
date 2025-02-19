@@ -64,4 +64,106 @@ voice_assistant:
         then:
           - voice_assistant.stop:
           #- light.turn_off: led
+switch:
+  - platform: template
+    name: Use wake word
+    id: use_wake_word
+    optimistic: true
+    restore_mode: RESTORE_DEFAULT_ON
+    entity_category: config
+    on_turn_on:
+      - lambda: id(va).set_use_wake_word(true);
+      - if:
+          condition:
+            not:
+              - voice_assistant.is_running
+          then:
+            - voice_assistant.start_continuous
+      #- script.execute: reset_led
+    on_turn_off:
+      - voice_assistant.stop
+      - lambda: id(va).set_use_wake_word(false);
+      #- script.execute: reset_led
+i2c:
+  - id: sensors
+    frequency: 100k
+    scl: GPIO22
+    sda: GPIO21
+sensor:
+  - platform: veml7700
+    i2c_id: sensors
+    address: 0x10
+    update_interval: 60s
+    # short variant of sensor definition:
+    ambient_light: 
+      name: "Ambient light"
+      id: ambient_light
+    # longer variant of sensor definition:
+    actual_gain:
+      name: "Actual gain"
+      id: gain
+  - platform: htu21d
+    i2c_id: sensors
+    model: htu21d
+    temperature:
+      name: "Temperature"
+      id: temperature
+    humidity:
+      name: "Humidity"
+      id: humidity
+    heater:
+      name: "Heater"
+      id: heater
+output:
+  - platform: gpio
+    pin: GPIO26
+    id: pin_LED
+  - platform: gpio
+    pin: GPIO27
+    id: pin_OUT       
+light:
+  - platform: binary
+    name: "LED"
+    id: led
+    output: pin_LED
+  - platform: binary
+    name: "OUT"
+    id: out
+    output: pin_OUT
+
+external_components:
+  - source: github://mrk-its/esphome-canopen
+canbus:
+  - platform: esp32_can
+    id: can_bus
+    rx_pin: GPIO18
+    tx_pin: GPIO19
+    can_id: 0
+    bit_rate: 125kbps
+canopen:
+  id: can_gate
+  canbus_id: can_bus
+  node_id: 11
+  entities:
+    - id: temperature
+      index: 1
+      tpdo: 0
+    - id: humidity
+      index: 2
+      tpdo: 0
+    - id: heater
+      index: 3
+      tpdo: 0
+    - id: out
+      index: 4
+      tpdo: 0    
+    - id: led
+      index: 5
+      tpdo: 0
+    - id: ambient_light
+      index: 6
+      tpdo: 0
+    - id: gain
+      index: 7
+      tpdo: 0
 

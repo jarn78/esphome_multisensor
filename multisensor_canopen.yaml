@@ -11,6 +11,7 @@ substitutions:
   name: ${device_name}
   friendly_name: ${device_name}
   ota_password: ${wifi_password}
+  update_interval: 60s
 #  node_id: 1
 external_components:
   - source: github://mrk-its/esphome-canopen
@@ -97,7 +98,7 @@ sensor:
   - platform: veml7700
     i2c_id: sensors
     address: 0x10
-    update_interval: 60s
+    update_interval: ${update_interval}
     # short variant of sensor definition:
     ambient_light: 
       name: "Ambient light"
@@ -111,6 +112,7 @@ sensor:
   - platform: htu21d
     i2c_id: sensors
     model: htu21d
+    update_interval: ${update_interval}
     temperature:
       name: "Temperature"
       id: temperature

@@ -20,7 +20,7 @@ esphome:
   min_version: 2024.6.0
   project:
     name: "esphome.Multisensor_canopen"
-    version: 0.1
+    version: "0.1"
 esp32:
   board: esp32dev
   framework:

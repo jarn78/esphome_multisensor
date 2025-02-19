@@ -32,6 +32,9 @@ wifi:
     - id: wifi_default
       ssid: ${wifi_ssid}
       password: ${wifi_password}
+api:
+  encryption:
+    key: "4K2JCR9dvhWax3nBCITN67nVWG23N7F2NoQC6LhkrXc="
 ota:
   - id: ota_std
     platform: esphome

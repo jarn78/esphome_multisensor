@@ -1,1 +1,1 @@
-ESPHome.io multisensor package for pcb board.
+ESPHome.io package for multisensor pcb board.

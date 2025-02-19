@@ -11,6 +11,7 @@ substitutions:
   name: ${device_name}
   friendly_name: ${device_name}
   ota_password: ${wifi_password}
+  node_id: 01
 external_components:
   - source: github://mrk-its/esphome-canopen
 esphome:
@@ -120,7 +121,7 @@ output:
     id: pin_LED
   - platform: gpio
     pin: GPIO27
-    id: pin_OUT       
+    id: pin_OUT 
 light:
   - platform: binary
     name: "LED"
@@ -130,9 +131,6 @@ light:
     name: "OUT"
     id: out
     output: pin_OUT
-
-external_components:
-  - source: github://mrk-its/esphome-canopen
 canbus:
   - platform: esp32_can
     id: can_bus
@@ -143,14 +141,20 @@ canbus:
 canopen:
   id: can_gate
   canbus_id: can_bus
-  node_id: 11
+  node_id: $(node_id)
   entities:
     - id: temperature
       index: 1
       tpdo: 0
+      size: 1
+      min: 0
+      max: 50
     - id: humidity
       index: 2
       tpdo: 0
+      size: 1
+      min: 0
+      max: 100
     - id: heater
       index: 3
       tpdo: 0

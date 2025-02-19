@@ -144,7 +144,7 @@ canbus:
 canopen:
   id: can_gate
   canbus_id: can_bus
-  node_id: $(node_id)
+  node_id: ${node_id}
   entities:
     - id: temperature
       index: 1

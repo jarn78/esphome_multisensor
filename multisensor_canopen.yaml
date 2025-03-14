@@ -48,6 +48,8 @@ uart:
   tx_pin: GPIO17
   rx_pin: GPIO16
   baud_rate: 256000
+ld2410:
+  
 i2s_audio:
   i2s_lrclk_pin: GPIO25
   i2s_bclk_pin: GPIO33

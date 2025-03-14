@@ -44,6 +44,10 @@ ota:
 logger:
   id: logger_std
   baud_rate: 0
+uart:
+  tx_pin: GPIO17
+  rx_pin: GPIO16
+  baud_rate: 256000
 i2s_audio:
   i2s_lrclk_pin: GPIO25
   i2s_bclk_pin: GPIO33
@@ -144,6 +148,16 @@ light:
     id: out
     output: pin_OUT
    # internal: True
+binary_sensor:
+  - platform: ld2410
+    has_target:
+      name: Presence
+    has_moving_target:
+      name: Moving Target
+    has_still_target:
+      name: Still Target
+    out_pin_presence_status:
+      name: out pin presence status
 
 
 

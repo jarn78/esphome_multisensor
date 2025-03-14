@@ -103,12 +103,12 @@ sensor:
     ambient_light: 
       name: "Ambient light"
       id: ambient_light
-      internal: True
+    #  internal: True
     # longer variant of sensor definition:
     actual_gain:
       name: "Actual gain"
       id: gain
-      internal: True
+    #  internal: True
   - platform: htu21d
     i2c_id: sensors
     model: htu21d
@@ -116,15 +116,15 @@ sensor:
     temperature:
       name: "Temperature"
       id: temperature
-      internal: True
+    #  internal: True
     humidity:
       name: "Humidity"
       id: humidity
-      internal: True
+    #  internal: True
     heater:
       name: "Heater"
       id: heater
-      internal: True
+    #  internal: True
 output:
   - platform: gpio
     pin: GPIO26
@@ -137,12 +137,12 @@ light:
     name: "LED"
     id: led
     output: pin_LED
-    internal: True
+   # internal: True
   - platform: binary
     name: "OUT"
     id: out
     output: pin_OUT
-    internal: True
+   # internal: True
 canbus:
   - platform: esp32_can
     id: can_bus

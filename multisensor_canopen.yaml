@@ -13,9 +13,7 @@ substitutions:
   ota_password: ${wifi_password}
   update_interval: 60s
 #  node_id: 1
-HTU21D: "false"
-CANBUS: "false"
-VEML7700: "false"
+
 external_components:
   - source: github://mrk-its/esphome-canopen
 esphome:
@@ -112,7 +110,6 @@ sensor:
       name: "Actual gain"
       id: gain
     #  internal: True
-  #ifdef HTU21D
   - platform: htu21d
     i2c_id: sensors
     model: htu21d
@@ -129,7 +126,6 @@ sensor:
       name: "Heater"
       id: heater
     #  internal: True
-  #endif
 output:
   - platform: gpio
     pin: GPIO26
@@ -148,45 +144,6 @@ light:
     id: out
     output: pin_OUT
    # internal: True
-#ifdef CANBUS
-canbus:
-  - platform: esp32_can
-    id: can_bus
-    rx_pin: GPIO18
-    tx_pin: GPIO19
-    can_id: 0
-    bit_rate: 125kbps
-canopen:
-  id: can_gate
-  canbus_id: can_bus
-  node_id: ${node_id}
-  entities:
-    - id: temperature
-      index: 1
-      tpdo: 0
-      size: 1
-      min_value: 0
-      max_value: 50
-    - id: humidity
-      index: 2
-      tpdo: 0
-      size: 1
-      min_value: 0
-      max_value: 100
-    - id: heater
-      index: 3
-      tpdo: 0
-    - id: out
-      index: 4
-      tpdo: 0    
-    - id: led
-      index: 5
-      tpdo: 0
-    - id: ambient_light
-      index: 6
-      tpdo: 0
-    - id: gain
-      index: 7
-      tpdo: 0
-#endif
+
+
 

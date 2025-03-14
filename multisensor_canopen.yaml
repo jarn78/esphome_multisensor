@@ -94,6 +94,11 @@ switch:
       - voice_assistant.stop
       - lambda: id(va).set_use_wake_word(false);
       #- script.execute: reset_led
+  - platform: ld2410
+    engineering_mode:
+      name: "engineering mode"
+    bluetooth:
+      name: "control bluetooth"
 i2c:
   - id: sensors
     frequency: 100k

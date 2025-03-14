@@ -45,7 +45,7 @@ logger:
   id: logger_std
   baud_rate: 0
 uart:
-  tx_pin: GPIO35
+  tx_pin: GPIO17
   rx_pin: GPIO16
   baud_rate: 256000
 ld2410:

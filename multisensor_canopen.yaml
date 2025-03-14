@@ -2,9 +2,7 @@
 ##### MULTISENSOR CAN ESPHOME created by Jarn - https://github.com/jarn78/esphome_multisensor   #####
 ##### v0.1                                                                                      #####
 #####################################################################################################
-HTU21D: "false"
-CANBUS: "false"
-VEML7700: "false"
+
 substitutions:
   ##############################
   ## Change only in your      ##
@@ -15,6 +13,9 @@ substitutions:
   ota_password: ${wifi_password}
   update_interval: 60s
 #  node_id: 1
+HTU21D: "false"
+CANBUS: "false"
+VEML7700: "false"
 external_components:
   - source: github://mrk-its/esphome-canopen
 esphome:

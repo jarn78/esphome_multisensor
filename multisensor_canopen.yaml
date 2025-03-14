@@ -2,7 +2,9 @@
 ##### MULTISENSOR CAN ESPHOME created by Jarn - https://github.com/jarn78/esphome_multisensor   #####
 ##### v0.1                                                                                      #####
 #####################################################################################################
-
+HTU21D: "false"
+CANBUS: "false"
+VEML7700: "false"
 substitutions:
   ##############################
   ## Change only in your      ##

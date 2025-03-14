@@ -109,6 +109,7 @@ sensor:
       name: "Actual gain"
       id: gain
     #  internal: True
+  #ifdef HTU21D
   - platform: htu21d
     i2c_id: sensors
     model: htu21d
@@ -125,6 +126,7 @@ sensor:
       name: "Heater"
       id: heater
     #  internal: True
+  #endif
 output:
   - platform: gpio
     pin: GPIO26
@@ -143,6 +145,7 @@ light:
     id: out
     output: pin_OUT
    # internal: True
+#ifdef CANBUS
 canbus:
   - platform: esp32_can
     id: can_bus
@@ -182,4 +185,5 @@ canopen:
     - id: gain
       index: 7
       tpdo: 0
+#endif
 

@@ -47,7 +47,9 @@ logger:
 uart:
   tx_pin: GPIO17
   rx_pin: GPIO16
-  baud_rate: 115200
+  baud_rate: 256000
+  parity: NONE
+  stop_bits: 1
 ld2410:
   
 i2s_audio:

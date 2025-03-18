@@ -45,9 +45,9 @@ logger:
   id: logger_std
   baud_rate: 0
 uart:
-  tx_pin: GPIO16
-  rx_pin: GPIO17
-  baud_rate: 256000
+  tx_pin: GPIO17
+  rx_pin: GPIO16
+  baud_rate: 115200
 ld2410:
   
 i2s_audio:

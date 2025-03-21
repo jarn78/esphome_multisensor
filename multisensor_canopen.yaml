@@ -159,7 +159,10 @@ binary_sensor:
   - platform: ld2410
     has_target:
       name: Presence
-
+  - platform: gpio
+    pin: GPIO35
+    name: Presence pin status
+    device_class: presence
 
 
 

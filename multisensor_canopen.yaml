@@ -44,7 +44,6 @@ ota:
 logger:
   id: logger_std
   level: DEBUG
-  baud_rate: 0
 uart:
   tx_pin: GPIO17
   rx_pin: GPIO16

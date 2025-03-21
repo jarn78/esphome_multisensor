@@ -43,6 +43,7 @@ ota:
     password: ${ota_password}
 logger:
   id: logger_std
+  level: DEBUG
   baud_rate: 0
 uart:
   tx_pin: GPIO17

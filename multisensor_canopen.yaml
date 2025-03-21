@@ -137,6 +137,8 @@ sensor:
       name: "Heater"
       id: heater
     #  internal: True
+  - platform: internal_temperature
+    name: "Internal Temperature"
 output:
   - platform: gpio
     pin: GPIO26

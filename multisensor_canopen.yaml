@@ -96,14 +96,14 @@ sensor:
   - platform: internal_temperature
     name: "Internal Temperature"
 output:
-  - platform: gpio
+  - platform: ledc
     pin: GPIO26
     id: pin_LED
   - platform: gpio
     pin: GPIO27
     id: pin_OUT 
 light:
-  - platform: binary
+  - platform: monochromatic
     name: "LED"
     id: led
     output: pin_LED

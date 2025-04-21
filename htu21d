@@ -1,0 +1,17 @@
+sensor:
+  - platform: htu21d
+    i2c_id: sensors
+    model: htu21d
+    update_interval: ${update_interval}
+    temperature:
+      name: "Temperature"
+      id: temperature
+    #  internal: True
+    humidity:
+      name: "Humidity"
+      id: humidity
+    #  internal: True
+    heater:
+      name: "Heater"
+      id: heater
+    #  internal: True

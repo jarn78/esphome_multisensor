@@ -65,3 +65,8 @@ light:
     id: out
     output: pin_OUT
    # internal: True
+binary_sensor:
+  - platform: gpio
+    pin: GPIO35
+    name: gpio out pin presence
+    device_class: presence

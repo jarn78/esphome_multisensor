@@ -140,7 +140,4 @@ binary_sensor:
       name: Still Target
     out_pin_presence_status:
       name: out pin presence status
-  - platform: gpio
-    pin: GPIO35
-    name: gpio out pin presence
-    device_class: presence
+

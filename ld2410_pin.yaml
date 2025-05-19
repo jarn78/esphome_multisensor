@@ -14,6 +14,10 @@ switch:
   - platform: ld2410
     bluetooth:
       name: "control bluetooth"
-
+binary_sensor:
+  - platform: gpio
+    pin: GPIO35
+    name: gpio out pin presence
+    device_class: presence
 
 

@@ -11,7 +11,7 @@ sensor:
       name: "Humidity"
       id: humidity
     #  internal: True
-    heater:
-      name: "Heater"
-      id: heater
+    #heater:
+    #  name: "Heater"
+    #  id: heater
     #  internal: True

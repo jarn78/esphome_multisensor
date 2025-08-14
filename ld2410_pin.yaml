@@ -17,7 +17,7 @@ switch:
 binary_sensor:
   - platform: gpio
     pin: GPIO35
-    name: gpio out pin presence
+    name: Pin presence
     device_class: presence
 
 

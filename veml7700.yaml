@@ -9,7 +9,4 @@ sensor:
       id: ambient_light
     #  internal: True
     # longer variant of sensor definition:
-    actual_gain:
-      name: "Actual gain"
-      id: gain
     #  internal: True

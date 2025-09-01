@@ -41,7 +41,7 @@ logger:
   level: DEBUG
 i2c:
   - id: sensors
-    frequency: 100k
+    frequency: 50k
     scl: GPIO22
     sda: GPIO21
 sensor:

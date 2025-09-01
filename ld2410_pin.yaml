@@ -6,7 +6,12 @@
 
 binary_sensor:
   - platform: gpio
-    pin: GPIO35
+    pin: 
+      number: GPIO35
+      mode:
+        input: true
+        pullup: true
+        
     name: Pin presence
     device_class: presence
 

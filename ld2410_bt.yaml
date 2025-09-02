@@ -1,0 +1,18 @@
+#####################################################################################################
+##### MULTISENSOR CAN ESPHOME created by Jarn - https://github.com/jarn78/esphome_multisensor   #####
+##### v0.1                                                                                      #####
+#####################################################################################################
+
+uart:
+  tx_pin: GPIO17
+  rx_pin: GPIO16
+  baud_rate: 256000
+  parity: NONE
+  stop_bits: 1
+ld2410:
+switch:
+  - platform: ld2410
+    bluetooth:
+      name: "control bluetooth"
+    engineering_mode:
+      name: "engineering mode"

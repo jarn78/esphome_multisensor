@@ -12,8 +12,6 @@ uart:
 ld2410:
 switch:
   - platform: ld2410
-    bluetooth:
-      name: "control bluetooth"
     engineering_mode:
       name: "engineering mode"
 sensor:
@@ -140,7 +138,4 @@ binary_sensor:
       name: Still Target
     out_pin_presence_status:
       name: out pin presence status
-  - platform: gpio
-    pin: GPIO35
-    name: gpio out pin presence
-    device_class: presence
+

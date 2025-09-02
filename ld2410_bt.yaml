@@ -14,5 +14,4 @@ switch:
   - platform: ld2410
     bluetooth:
       name: "control bluetooth"
-    engineering_mode:
-      name: "engineering mode"
+

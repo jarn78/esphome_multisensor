@@ -1,7 +1,7 @@
 sensor:
   - platform: htu21d
     i2c_id: sensors
-    model: htu21d
+    model: HTU21D
     update_interval: ${update_interval}
     temperature:
       name: "Temperature"

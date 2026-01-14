@@ -39,6 +39,9 @@ ota:
 logger:
   id: logger_std
   level: DEBUG
+button:
+  - platform: restart
+    name: "Restart"
 i2c:
   - id: sensors
     frequency: 100k

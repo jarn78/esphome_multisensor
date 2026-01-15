@@ -21,6 +21,7 @@ esphome:
     version: "0.2"
 esp32:
   board: esp32dev
+  cpu_frequency: 80MHz 
   framework:
     type: arduino
 wifi:

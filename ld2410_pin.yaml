@@ -7,7 +7,8 @@
 binary_sensor:
   - platform: gpio
     pin: 
-      number: GPIO35 
+      number: GPIO35
+      inverted: true
     name: Pin presence
     device_class: presence
 

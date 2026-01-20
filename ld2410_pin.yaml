@@ -9,7 +9,7 @@ binary_sensor:
     pin: 
       number: GPIO35
       inverted: true
-    name: Pin presence
-    device_class: presence
+    name: Pin occupancy
+    device_class: occupancy
 
 

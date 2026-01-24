@@ -8,7 +8,7 @@ binary_sensor:
   - platform: gpio
     pin: 
       number: GPIO35
-      inverted: true
+      inverted: false
     name: Pin occupancy
     device_class: occupancy
 

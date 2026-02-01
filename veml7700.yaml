@@ -1,0 +1,12 @@
+sensor:
+  - platform: veml7700
+    i2c_id: sensors
+    address: 0x10
+    update_interval: ${update_interval}
+    # short variant of sensor definition:
+    ambient_light: 
+      name: "Ambient light"
+      id: ambient_light
+    #  internal: True
+    # longer variant of sensor definition:
+    #  internal: True

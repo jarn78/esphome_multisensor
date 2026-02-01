@@ -1,0 +1,15 @@
+#####################################################################################################
+##### MULTISENSOR CAN ESPHOME created by Jarn - https://github.com/jarn78/esphome_multisensor   #####
+##### v0.1                                                                                      #####
+#####################################################################################################
+
+
+binary_sensor:
+  - platform: gpio
+    pin: 
+      number: GPIO35
+      inverted: false
+    name: Pin occupancy
+    device_class: occupancy
+
+

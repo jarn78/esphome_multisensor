@@ -12,24 +12,20 @@ substitutions:
   friendly_name: ${device_name}
   ota_password: ${wifi_password}
   update_interval: 60s
-#  node_id: 1
-
-external_components:
-  - source: github://mrk-its/esphome-canopen
 esphome:
   name: ${name}
   friendly_name: ${friendly_name}
   min_version: 2024.6.0
   project:
     name: "esphome.Multisensor_canopen"
-    version: "0.1"
+    version: "0.2"
 esp32:
   board: esp32dev
+  cpu_frequency: 160MHz 
   framework:
     type: arduino
 wifi:
   id: wifi_component
-#  power_save_mode: LIGHT
   networks:
     - id: wifi_default
       ssid: ${wifi_ssid}
@@ -44,45 +40,17 @@ ota:
 logger:
   id: logger_std
   level: DEBUG
+switch:
+  - platform: restart
+    name: "Restart"
 i2c:
   - id: sensors
-    frequency: 100k
+    frequency: 50k
     scl: GPIO22
     sda: GPIO21
 sensor:
-  - platform: veml7700
-    i2c_id: sensors
-    address: 0x10
-    update_interval: ${update_interval}
-    # short variant of sensor definition:
-    ambient_light: 
-      name: "Ambient light"
-      id: ambient_light
-    #  internal: True
-    # longer variant of sensor definition:
-    actual_gain:
-      name: "Actual gain"
-      id: gain
-    #  internal: True
-  - platform: htu21d
-    i2c_id: sensors
-    model: htu21d
-    update_interval: ${update_interval}
-    temperature:
-      name: "Temperature"
-      id: temperature
-    #  internal: True
-    humidity:
-      name: "Humidity"
-      id: humidity
-    #  internal: True
-    heater:
-      name: "Heater"
-      id: heater
-    #  internal: True
   - platform: internal_temperature
     name: "Internal Temperature"
-
 output:
   - platform: ledc
     pin: GPIO26

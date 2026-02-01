@@ -46,7 +46,7 @@ switch:
     name: "Restart"
 i2c:
   - id: sensors
-    frequency: 50k
+    frequency: 400k
     scl: GPIO22
     sda: GPIO21
 sensor:

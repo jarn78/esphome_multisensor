@@ -49,6 +49,12 @@ i2c:
     frequency: 400k
     scl: GPIO22
     sda: GPIO21
+uart:
+  tx_pin: GPIO17
+  rx_pin: GPIO16
+  baud_rate: 256000
+  parity: NONE
+  stop_bits: 1
 sensor:
   - platform: internal_temperature
     name: "Internal Temperature"
